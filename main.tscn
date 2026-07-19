@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://mxry3hv3ca4a"]
+[gd_scene load_steps=7 format=3 uid="uid://mxry3hv3ca4a"]
 
 [ext_resource type="PackedScene" uid="uid://wms7vi1qhwb2" path="res://ball.tscn" id="1_ball"]
 [ext_resource type="PackedScene" path="res://player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://item.tscn" id="3_item"]
+[ext_resource type="Script" path="res://main.gd" id="4_main"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_h"]
 size = Vector2(1200, 50)
@@ -10,6 +12,8 @@ size = Vector2(1200, 50)
 size = Vector2(50, 700)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("4_main")
+item_scene = ExtResource("3_item")
 
 [node name="Ball" parent="." instance=ExtResource("1_ball")]
 position = Vector2(800, 324)
@@ -40,3 +44,41 @@ position = Vector2(1177, 324)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("RectangleShape2D_wall_v")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 216.0
+offset_bottom = 36.0
+text = "Score: 0"
+
+[node name="LivesLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 216.0
+offset_bottom = 64.0
+text = "Lives: 3"
+
+[node name="LevelLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 68.0
+offset_right = 216.0
+offset_bottom = 92.0
+text = "Level: 1"
+
+[node name="HintLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 700.0
+offset_bottom = 120.0
+
+[node name="GameOverLabel" type="Label" parent="UI"]
+offset_left = 380.0
+offset_top = 280.0
+offset_right = 800.0
+offset_bottom = 380.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "Game Over"

@@ -15,6 +15,10 @@ run/main_scene="uid://mxry3hv3ca4a"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://game_manager.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,6 +27,25 @@ window/stretch/aspect="expand"
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194319,"physical_keycode":0,"unicode":0,"echo":false), Object(InputEventKey,"keycode":0,"physical_keycode":65,"unicode":0,"echo":false)]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194321,"physical_keycode":0,"unicode":0,"echo":false), Object(InputEventKey,"keycode":0,"physical_keycode":68,"unicode":0,"echo":false)]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194320,"physical_keycode":0,"unicode":0,"echo":false), Object(InputEventKey,"keycode":0,"physical_keycode":87,"unicode":0,"echo":false)]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194322,"physical_keycode":0,"unicode":0,"echo":false), Object(InputEventKey,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false)]
+}
 
 [rendering]
 
